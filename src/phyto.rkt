@@ -217,13 +217,6 @@
               (form-cb-obs "Toxique" @toxic?)))]
     [sym (make-form (make-blank-instance sym))]))
 
-(define (show-form-dialog form)
-  (render (window #:size '(500 500)
-                  (vpanel form
-                          (hpanel #:alignment '(center bottom)
-                                  (button "OK" (λ () empty))
-                                  (button "Cancel" (λ () empty)))))))
-
 (define main-menu
   (menu-bar (menu "File"
                   (menu-item "Open ..."
