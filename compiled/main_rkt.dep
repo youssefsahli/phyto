@@ -1,0 +1,1 @@
+("8.10" ta6le ("d085464d08bb6c844b7f4410b0022b1fd1ad88b7" . "80fece4b37382036813ce7626844e4777ccba073") (collects #"phyto" #"src" #"phyto.rkt") (collects #"racket" #"base.rkt") (collects #"racket" #"runtime-config.rkt"))
