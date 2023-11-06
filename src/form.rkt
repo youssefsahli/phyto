@@ -9,7 +9,8 @@
          racket/path
          racket/string
          racket/struct
-         "phyto.rkt")
+         "phyto.rkt"
+         "media.rkt")
 
 (provide (all-defined-out))
 ;; ------ [Form construction tools]------
@@ -40,15 +41,17 @@
 
 (define (form-image-path obs)
   (define (is-img? path)
-    (bytes=? (path-get-extension path) #".png"))
-  (let ([img-path (obs-peek obs)] [@default-img-path (@ "plant-icon.png")])
-    (vpanel (image (if (non-empty-string? img-path) obs @default-img-path)
+    (and path (bytes=? (path-get-extension path) #".png")))
+
+  (let ([img-path (obs-peek obs)]
+        [@default-img-path (@ (media "plant-icon.png"))])
+    (vpanel (image (if (path-string? img-path) obs @default-img-path)
                    #:size '(50 50)
                    #:mode 'fit)
             (button "Image Path"
                     (λ ()
                       (let* ([path (get-file)])
-                        (when (not (is-img? path))
+                        (when (and path (not (is-img? path)))
                           (render (dialog (text "Not an image !"))))
                         (when (and path is-img?)
                           (:= obs path))))))))
@@ -105,6 +108,8 @@
                   (menu-item "Quit" save-and-exit))
             (menu "Help" (menu-item "About"))))
 
-(define main-window (vpanel main-menu))
+(define main-panel (vpanel main-menu))
 
-(define main-frame (window #:size '(800 640) main-window))
+(define about-window (window))
+
+(define main-frame (window #:size '(800 640) main-panel))

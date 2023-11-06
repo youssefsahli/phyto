@@ -10,6 +10,7 @@
          racket/match
          racket/serialize
          racket/struct)
+
 (provide (all-defined-out))
 
 (serializable-struct db<> (data freed-ids) #:mutable #:transparent)
@@ -45,10 +46,10 @@
 
 (define (make-blank-instance sym)
   (match sym
-    ['familia<> (familia<> -1 "")]
-    ['genus<> (genus<> -1 "" -1)]
-    ['species<> (species<> -1 "" -1)]
-    ['plant<> (plant<> -1 "" -1 "" #f "")]))
+    ['familia (familia<> -1 "")]
+    ['genus (genus<> -1 "" -1)]
+    ['species (species<> -1 "" -1)]
+    ['plant (plant<> -1 "" -1 "" #f "")]))
 
 (define (last-id db)
   (apply max 0 (hash-keys (db<>-data db))))
