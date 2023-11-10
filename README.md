@@ -1,3 +1,3 @@
-otc
+Phyto Plant DB
 ===
 README text here.

@@ -5,4 +5,4 @@
 
 (provide/contract [DB-PATH path-string?])
 
-(define-runtime-path DB-PATH "db.sqlite3")
+(define-runtime-path DB-PATH "phyto-db.sqlite3")
