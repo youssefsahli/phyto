@@ -1,1 +1,1 @@
-("8.10" ta6le ("c3ccf3d5c594667456b29e22e8c93196ef7b9785" . "d1c119d7addc9c125689ca701bbc935200792f99") (collects #"info" #"main.rkt") (collects #"setup" #"infotab.rkt"))
+("8.10" ta6le ("099c7029ca6f601fdc5e04a303c249b345864b50" . "d1c119d7addc9c125689ca701bbc935200792f99") (collects #"info" #"main.rkt") (collects #"setup" #"infotab.rkt"))
